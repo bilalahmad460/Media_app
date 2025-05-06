@@ -1,0 +1,34 @@
+.app-container{
+    display: flex;
+}
+
+.content{
+    width: 100%;
+}
+
+.sidebar{
+    height: 100vh;
+}
+
+.post-card{
+    margin: 30px 50px;
+}
+
+/* for hash tags but i using bootstrap classes (me-2) dase hom kegee  */
+/* .hash-tag{
+    margin: 0 5px;
+} */
+
+.reactions{
+    margin: 10px 0 0 0;
+}
+
+.create-post{
+    width: 70%;
+    margin-left: 10%;
+    margin-top: 50px ;
+}
+
+.welcome-message{
+    margin: 50px 0;
+}
