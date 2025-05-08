@@ -9,12 +9,20 @@ export const PostList = () => {
   const [feching, setFeching] = useState(false);
   useEffect(() => {
     setFeching(true);
-    fetch("https://dummyjson.com/posts")
+
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    fetch("https://dummyjson.com/posts", { signal })
       .then((res) => res.json())
       .then((data) => {
         addInitialPost(data.posts);
         setFeching(false);
       });
+    return () => {
+      console.log("cleanup");
+      controller.abort();
+    };
   }, []);
   return (
     <>
